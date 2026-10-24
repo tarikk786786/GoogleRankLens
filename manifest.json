@@ -1,0 +1,71 @@
+{
+  "manifest_version": 3,
+  "name": "GoogleRankLens — SEO Keyword & SERP Rank Analyzer",
+  "version": "1.0.0",
+  "description": "Live organic rank badges (#1, #2...), authentic Google Suggest volume signals, and Gemini AI keyword metrics on every Google search.",
+  "author": "tarikislam.in",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "GoogleRankLens"
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "clipboardWrite"
+  ],
+  "host_permissions": [
+    "*://*.google.com/*",
+    "*://*.google.co.in/*",
+    "*://*.google.co.uk/*",
+    "*://*.google.ca/*",
+    "*://*.google.com.au/*",
+    "*://*.google.de/*",
+    "*://*.google.fr/*",
+    "*://*.google.es/*",
+    "*://*.google.it/*",
+    "*://*.google.co.jp/*",
+    "*://*.google.com.br/*",
+    "*://*.google.nl/*",
+    "*://suggestqueries.google.com/*",
+    "https://generativelanguage.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/search*",
+        "*://*.google.co.in/search*",
+        "*://*.google.co.uk/search*",
+        "*://*.google.ca/search*",
+        "*://*.google.com.au/search*",
+        "*://*.google.de/search*",
+        "*://*.google.fr/search*",
+        "*://*.google.es/search*",
+        "*://*.google.it/search*",
+        "*://*.google.co.jp/search*",
+        "*://*.google.com.br/search*",
+        "*://*.google.nl/search*"
+      ],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ]
+}

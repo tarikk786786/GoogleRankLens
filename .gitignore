@@ -1,0 +1,9 @@
+# Build / Cache
+node_modules/
+dist/
+*.log
+
+# OS metadata
+Thumbs.db
+Desktop.ini
+.DS_Store

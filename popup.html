@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GoogleRankLens</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <div class="popup-header">
+      <div class="popup-brand">
+        <img src="icons/icon48.png" alt="GoogleRankLens" class="popup-icon">
+        <span>GoogleRankLens</span>
+      </div>
+      <span class="popup-version">v1.0.0</span>
+    </div>
+
+    <!-- Active Search Tab Status -->
+    <div class="status-card" id="tab-status-card">
+      <div class="status-label">Active Search Tab</div>
+      <div class="status-query" id="tab-query">Checking active tab...</div>
+    </div>
+
+    <!-- Target Domain Tracker -->
+    <div class="target-section">
+      <div class="target-header">
+        <span>Target Domain</span>
+        <span id="target-status-tag" style="font-size:10px;color:#10b981;">Active</span>
+      </div>
+      <div class="target-input-row">
+        <input type="text" id="target-domain-input" class="target-input" placeholder="e.g. dezo.in" spellcheck="false">
+        <button type="button" id="btn-save-target" class="btn-save-target">Save</button>
+      </div>
+      <div class="target-rank-display" id="target-rank-box">
+        <span id="target-domain-label" style="font-weight:600;color:#10b981;">dezo.in</span>
+        <span id="target-rank-result" style="font-weight:700;">Scanning SERP...</span>
+      </div>
+    </div>
+
+    <!-- Quick Metrics -->
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <div class="metric-title">Search Volume</div>
+        <div class="metric-val" id="metric-volume" style="color:#38bdf8;">--</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-title">Difficulty</div>
+        <div class="metric-val" id="metric-diff" style="color:#10b981;">--</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-title">Intent</div>
+        <div class="metric-val" id="metric-intent">--</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-title">Organic Count</div>
+        <div class="metric-val" id="metric-organic-count">--</div>
+      </div>
+    </div>
+
+    <!-- Actions -->
+    <div class="actions-row">
+      <button type="button" class="action-btn" id="btn-popup-export">
+        📥 Export CSV
+      </button>
+      <button type="button" class="action-btn" id="btn-popup-copy">
+        📋 Copy URLs
+      </button>
+    </div>
+
+    <!-- Footer -->
+    <div class="popup-footer">
+      <a href="#" id="link-options" class="footer-link">⚙ Settings & API Keys</a>
+      <span class="footer-brand">tarikislam.in</span>
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
